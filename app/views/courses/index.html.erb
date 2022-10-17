@@ -1,13 +1,20 @@
-<h1>Course Listing</h1>
+<h1 class='text-center mt-5'>Course Listing</h1>
 
-<ul>
-  <li>Code: CS111</li>
-  <li>Name: Intro to Computer Science</li>
-  <li>Description: A thorough intro to Computer Science</li>
-</ul>
-
-<ul>
-  <li>Code: CS112</li>
-  <li>Name: Intro to Computer Science</li>
-  <li>Description: A thorough intro to Computer Science</li>
-</ul>
+<div class="container mt-5">
+  <div class="row">
+    <% courses.each do |course| %>
+      <div class="col-sm-4">
+        <div class="card mb-5">
+          <div class="card-body">
+            <p>Code: <%= course.short_name %></p>
+            <hr class='divider'>
+            <h5 class="card-title">Name: <%= course.name %></h5>
+            <p class="card-text">Description: <%= course.description %></p>
+            <%= link_to 'Read more', '#', class: 'btn btn-primary' %>
+            <%= link_to 'Enroll', '#', class: 'btn btn-success' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
