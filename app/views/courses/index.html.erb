@@ -6,10 +6,9 @@
       <div class="col-sm-4">
         <div class="card mb-5">
           <div class="card-body">
-            <p>Code: <%= course.short_name %></p>
+            <h5 class="card-title"><%= course.short_name %>: <%= course.name %></h5>
+            <p class="card-text"><%= course.description %></p>
             <hr class='divider'>
-            <h5 class="card-title">Name: <%= course.name %></h5>
-            <p class="card-text">Description: <%= course.description %></p>
             <%= link_to 'Read more', '#', class: 'btn btn-primary' %>
             <%= link_to 'Enroll', '#', class: 'btn btn-success' %>
           </div>
