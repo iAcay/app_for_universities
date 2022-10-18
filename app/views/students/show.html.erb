@@ -1,0 +1,10 @@
+<div class="card mb-5 mt-5">
+  <div class="card-body">
+    <h5 class="card-title"><%= student.first_name + ' ' + student.last_name %></h5>
+    <p><%= student.email %></p>
+    <p>Course Enrollments: </p>
+    <hr class='divider'>
+    <%= link_to 'Back to Student', students_path, class: 'btn btn-primary' %>
+    <%= link_to 'Link', '#', class: 'btn btn-success' %>
+  </div>
+</div>
