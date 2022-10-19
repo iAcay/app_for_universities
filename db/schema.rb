@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_18_162157) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_19_143832) do
   create_table "courses", force: :cascade do |t|
     t.string "short_name", null: false
     t.string "name", null: false
@@ -19,6 +19,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_18_162157) do
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_courses_on_name", unique: true
     t.index ["short_name"], name: "index_courses_on_short_name", unique: true
+  end
+
+  create_table "student_courses", force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "course_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_student_courses_on_course_id"
+    t.index ["student_id"], name: "index_student_courses_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -35,4 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_18_162157) do
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "student_courses", "courses"
+  add_foreign_key "student_courses", "students"
 end

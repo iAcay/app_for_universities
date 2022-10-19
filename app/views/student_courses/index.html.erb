@@ -1,0 +1,18 @@
+<h1 class='text-center mt-5'>Your courses</h1>
+
+<div class="container mt-5">
+  <div class="row">
+    <% student_courses.each do |student_course| %>
+      <div class="col-sm-4">
+        <div class="card mb-5">
+          <div class="card-body">
+            <h5 class="card-title"><%= student_course.course.short_name %>: <%= student_course.course.name %></h5>
+            <p class="card-text"><%= student_course.course.description %></p>
+            <hr class='divider'>
+            <%= button_to 'Sign off', student_course_path(student_course), method: :delete, form: { data: { turbo_confirm: 'Are you sure?' } }, class: 'btn btn-danger' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -9,8 +9,7 @@
             <h5 class="card-title"><%= course.short_name %>: <%= course.name %></h5>
             <p class="card-text"><%= course.description %></p>
             <hr class='divider'>
-            <%= link_to 'Read more', '#', class: 'btn btn-primary' %>
-            <%= link_to 'Enroll', '#', class: 'btn btn-success' %>
+            <%= button_to 'Enroll', student_courses_path(student_course: { student: current_student, course: course }), method: :post, form: { data: { turbo_confirm: 'Are you sure?' } }, class: 'btn btn-success' %>
           </div>
         </div>
       </div>

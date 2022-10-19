@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   resources :courses
   resources :students, only: %i[index show]
+  resources :student_courses, only: %i[index create destroy]
 end

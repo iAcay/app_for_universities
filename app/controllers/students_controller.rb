@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   
   def index
-    render :index, locals: { students: Student.all }
+    render :index, locals: { students: Student.all}
   end
 
   def show

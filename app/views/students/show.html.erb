@@ -3,6 +3,11 @@
     <h5 class="card-title"><%= student.first_name + ' ' + student.last_name %></h5>
     <p><%= student.email %></p>
     <p>Course Enrollments: </p>
+    <ul>
+      <% student.courses.each do |course| %>
+        <li><%= course.short_name + ' ' + course.name %> </li>
+      <% end %>
+    </ul>
     <hr class='divider'>
     <%= link_to 'Back to Student', students_path, class: 'btn btn-primary' %>
     <%= link_to 'Link', '#', class: 'btn btn-success' %>
