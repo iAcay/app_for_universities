@@ -46,6 +46,8 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 gem 'bootstrap', '~> 5.2.2'
 gem 'devise'
+gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: 'main'
+gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: 'main'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
