@@ -7,11 +7,13 @@ class CoursesController < ApplicationController
 
   def show
 
-
   end
 
   def new
 
   end
 
+  def search
+    render :search, locals: { courses: Course.search(params[:query]) }
+  end
 end

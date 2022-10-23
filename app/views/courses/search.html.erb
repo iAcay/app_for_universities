@@ -1,0 +1,35 @@
+<h1 class='text-center mb-5 mt-5'>Search Courses</h1>
+
+<%= form_with url: search_courses_path, method: :get do |form| %>
+ <div class="row">
+  <div class="col-10">
+      <%= form.text_field :query, class: 'form-control me-2', type: 'search', placeholder: 'Search', aria_label: 'Search' %>
+    </div>
+    <div class="col-2">
+        <%= form.submit 'Search', class: 'btn btn-outline-success', type: 'submit' %>
+    </div>
+  </div>
+<% end %>
+
+<% unless courses.nil? %>
+  <% if courses.empty? %>
+    <h2 class='text-center mt-5'>No courses found matching your query.</h2>
+  <% else %>
+    <div class="container mt-5">
+      <div class="row">
+        <% courses.each do |course| %>
+          <div class="col-sm-4">
+            <div class="card mb-5">
+              <div class="card-body">
+                <h5 class="card-title"><%= course.short_name %>: <%= course.name %></h5>
+                <p class="card-text"><%= course.description %></p>
+                <hr class='divider'>
+                <%= button_to 'Enroll', student_courses_path(student_course: { student: current_student, course: course }), method: :post, form: { data: { turbo_confirm: 'Are you sure?' } }, class: 'btn btn-success' %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

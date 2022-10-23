@@ -46,6 +46,7 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 gem 'bootstrap', '~> 5.2.2'
 gem 'devise'
+gem  'elasticsearch', "< 7.14"
 gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: 'main'
 gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: 'main'
 

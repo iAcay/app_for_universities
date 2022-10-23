@@ -112,12 +112,12 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    elasticsearch (7.17.1)
-      elasticsearch-api (= 7.17.1)
-      elasticsearch-transport (= 7.17.1)
-    elasticsearch-api (7.17.1)
+    elasticsearch (7.13.3)
+      elasticsearch-api (= 7.13.3)
+      elasticsearch-transport (= 7.13.3)
+    elasticsearch-api (7.13.3)
       multi_json
-    elasticsearch-transport (7.17.1)
+    elasticsearch-transport (7.13.3)
       faraday (~> 1)
       multi_json
     erubi (1.11.0)
@@ -292,6 +292,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  elasticsearch (< 7.14)
   elasticsearch-model!
   elasticsearch-rails!
   importmap-rails
